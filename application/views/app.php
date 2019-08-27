@@ -44,11 +44,20 @@
     <search-bar></search-bar>
   </div>
 
+  <div id="game-list">
+    <game
+      ng-repeat="game in vm.data"
+      thumbnail="game.icon_2"
+      title="game.name"
+      provider="game.provider_title"></game>
+  </div>
+
   <script src="https://kit.fontawesome.com/ce46ce4a0e.js"></script>
   <script src="assets/lib/angular.min.js"></script>
   <script src="assets/js/app.js"></script>
   <script src="assets/js/app.controller.js"></script>
   <script src="assets/js/input-field.directive.js"></script>
   <script src="assets/js/search-bar.directive.js"></script>
+  <script src="assets/js/game.directive.js"></script>
 </body>
 </html>

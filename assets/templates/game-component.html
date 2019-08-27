@@ -1,0 +1,35 @@
+<style>
+  .game-item {
+    border: 1px solid #fbd133;
+    margin: 5px;
+    border-radius: 2px;
+  }
+
+  .game-item .thumbnail {
+    width: 220px;
+    height: 155px;
+  }
+
+  .game-item .title [name] {
+    text-align: center;
+    color: #EFEFEF;
+    font-size: 17px;
+  }
+
+  .game-item .title [provider] {
+    margin-top: 10px;
+    padding: 0 3px;
+    color: #898989;
+    font-size: 11px;
+    text-align: center;
+  }
+</style>
+<div class="game-item">
+  <div class="thumbnail">
+    <img ng-src="{{thumbnail}}">
+  </div>
+  <div class="title">
+    <div name>{{title}}</div>
+    <div provider>{{provider}}</div>
+  </div>
+</div>

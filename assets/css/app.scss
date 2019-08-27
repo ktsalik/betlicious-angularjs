@@ -97,3 +97,11 @@ body {
   align-items: center;
   padding: 30px;
 }
+
+#game-list {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
