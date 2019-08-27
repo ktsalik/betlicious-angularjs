@@ -6,10 +6,25 @@ angular
     vm.view = {
       name: '',
       background: null,
+      backgroundLoaded: false,
     };
 
-    $http.get('games/' + $routeParams.gameId).then(function(response) {
+    $http.get('games/' + encodeURI($routeParams.gameId)).then(function(response) {
       vm.view.name = response.data.name;
-      vm.view.background = response.data.background;
+
+      var backgroundImg = new Image();
+      var bg = backgroundImg;
+      bg.src = response.data.background;
+      bg.onload = function() {
+        $scope.$apply(function() {
+          vm.view.backgroundLoaded = true;
+          vm.view.background = bg.src;
+        });
+      };
+      bg.onerror = function () {
+        $scope.$apply(function() {
+          vm.view.backgroundLoaded = true;
+        });
+      };
     });
   }]);

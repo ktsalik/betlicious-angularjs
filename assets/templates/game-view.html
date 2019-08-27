@@ -18,6 +18,12 @@
   }
 </style>
 <div class="game">
-  <div class="title"><span>You play</span>&nbsp;{{vm.view.name}}</div>
+  <div class="title">
+    <span>
+      <span ng-if="vm.view.backgroundLoaded">You play</span>
+      <i class="fas fa-cog fa-spin" ng-if="!vm.view.backgroundLoaded"></i>
+    </span>
+    &nbsp;{{vm.view.name}}
+  </div>
   <img ng-src="{{vm.view.background}}">
 </div>

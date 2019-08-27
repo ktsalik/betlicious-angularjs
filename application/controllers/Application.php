@@ -29,10 +29,12 @@ class Application extends CI_Controller {
     $name = urldecode($name);
     $data = json_decode(file_get_contents('data.json'));
     for ($i = 0; $i < count($data); $i++) {
-      if ($data[$i]->name == $name) {
+      if (trim($data[$i]->name) == $name) {
         $game = [];
         $game['name'] = $data[$i]->name;
-        $game['background'] = $data[$i]->background;
+        if (isset($data[$i]->background)) {
+          $game['background'] = $data[$i]->background;
+        }
         print json_encode($game);
         return;
       }
