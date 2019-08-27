@@ -22,8 +22,8 @@
     </div>
 
     <div class="options">
-      <input-field placeholder="User Name"></input-field>
-      <input-field placeholder="••••••"></input-field>
+      <input-field input-type="text" placeholder="User Name"></input-field>
+      <input-field input-type="password" placeholder="••••••"></input-field>
       <div class="btn-login">Login</div>
       <div class="btn-signup">Sign Up</div>
     </div>

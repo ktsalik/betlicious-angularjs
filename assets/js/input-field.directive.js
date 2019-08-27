@@ -4,10 +4,11 @@ angular
     return {
       scope: {
         placeholder: '@',
+        inputType: '@',
       },
       template: `
         <div class="input-field">
-          <input type="text">
+          <input type="{{inputType}}">
           <div placeholder>{{placeholder}}</div>
         </div>
       `,
