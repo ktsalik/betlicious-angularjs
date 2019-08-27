@@ -1,0 +1,79 @@
+@font-face {
+  font-family: web;
+  src: url(../fonts/Titillium_Web/TitilliumWeb-Regular.ttf);
+}
+body {
+  margin: 0;
+  background: #141e30;
+  font-family: web;
+}
+
+#header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 7px;
+}
+#header .logo {
+  display: inline-flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  color: #EEE;
+}
+#header .logo span {
+  font-size: 25px;
+}
+#header .options {
+  display: inline-flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+#header .options > * {
+  margin: 0 5px;
+}
+#header .options input {
+  font-size: 17px;
+  padding: 3px;
+  border-radius: 3px;
+  border: none;
+  outline: none;
+  width: 130px;
+}
+#header .options .btn-login, #header .options .btn-signup {
+  display: inline-flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 5px 20px;
+  border-radius: 18px;
+  font-weight: bold;
+  cursor: pointer;
+}
+#header .options .btn-login {
+  background-color: #ed4635;
+  color: #EEE;
+}
+#header .options .btn-signup {
+  background-color: #fcd233;
+  color: #111;
+}
+
+#navbar {
+  background-color: #fbd133;
+}
+#navbar [link] {
+  display: inline-block;
+  padding: 5px;
+  cursor: pointer;
+  margin: 0 30px;
+}
+
+#banner {
+  width: 100vw;
+  overflow: hidden;
+}
+
+/*# sourceMappingURL=app.css.map */
