@@ -1,6 +1,6 @@
 angular
   .module('BetliciousApp')
-  .directive('searchBar', function () {
+  .directive('searchBar', function() {
     return {
       scope: {
         onInput: '=',
@@ -15,19 +15,19 @@ angular
         </div>
       `,
       replace: true,
-      link: function (scope, element, attrs) {
+      link: function(scope, element, attrs) {
         element[0].style.position = 'relative';
 
         var inputEl = element[0].querySelector('input');
 
         var placeholderEl = element[0].querySelector('[placeholder]');
 
-        element[0].addEventListener('click', function () {
+        element[0].addEventListener('click', function() {
           placeholderEl.style.display = 'none';
           inputEl.focus();
         });
 
-        inputEl.addEventListener('blur', function () {
+        inputEl.addEventListener('blur', function() {
           placeholderEl.style.display = 'inline-flex';
         });
 

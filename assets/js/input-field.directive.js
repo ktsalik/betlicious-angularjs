@@ -30,7 +30,7 @@ angular
           inputEl.focus();
         });
 
-        inputEl.addEventListener('focus', function () {
+        inputEl.addEventListener('focus', function() {
           ph.style.display = 'none';
           inputEl.focus();
         });
@@ -39,7 +39,7 @@ angular
           ph.style.display = 'initial';
         });
 
-        inputEl.addEventListener('input', function () {
+        inputEl.addEventListener('input', function() {
           if (this.value.length) {
             ph.style.visibility = 'hidden';
           } else {

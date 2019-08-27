@@ -9,7 +9,7 @@ angular
       backgroundLoaded: false,
     };
 
-    $http.get('games/' + encodeURI($routeParams.gameId)).then(function(response) {
+    $http.get('games/' + encodeURI($routeParams.gameId.trim())).then(function(response) {
       vm.view.name = response.data.name;
 
       var backgroundImg = new Image();
@@ -21,7 +21,7 @@ angular
           vm.view.background = bg.src;
         });
       };
-      bg.onerror = function () {
+      bg.onerror = function() {
         $scope.$apply(function() {
           vm.view.backgroundLoaded = true;
         });
