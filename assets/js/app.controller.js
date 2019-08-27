@@ -46,10 +46,24 @@ angular
         vm.data = data;
       } else {
         vm.category = categoryId;
-        vm.data = data.filter(function (game) {
+        vm.data = data.filter(function(game) {
           return game.categories.indexOf(categoryId) > -1;
         });
       }
       vm.games = vm.data.slice(0, 12);
+      document.querySelector('.search-bar input').value = ''; // FIXME: temporary hack to prevent injecting a model to search-bar component for now...
+    };
+
+    vm.search = function(value) {
+      $scope.$apply(function() {
+        if (!value.trim().length) {
+          vm.data = data;
+        } else {
+          vm.data = data.filter(function (game) {
+            return game.title.toLowerCase().indexOf(value.toLowerCase()) > -1;
+          });
+        }
+        vm.games = vm.data.slice(0, 12);
+      });
     };
   }]);

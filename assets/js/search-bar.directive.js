@@ -2,10 +2,13 @@ angular
   .module('BetliciousApp')
   .directive('searchBar', function () {
     return {
+      scope: {
+        onInput: '=',
+      },
       template: `
         <div class="search-bar">
           <input type="text">
-          <div placeholder>Search Games</div>
+          <div placeholder>Search Game</div>
           <div button>
             <i class="fa fa-search"></i>
           </div>
@@ -28,7 +31,14 @@ angular
           placeholderEl.style.display = 'inline-flex';
         });
 
+        var onInputTimeout;
         inputEl.addEventListener('input', function() {
+          var value = this.value;
+          clearTimeout(onInputTimeout);
+          onInputTimeout = setTimeout(function() {
+            scope.onInput(value);
+          }, 350);
+          
           if (this.value.length) {
             placeholderEl.style.visibility = 'hidden';
           } else {

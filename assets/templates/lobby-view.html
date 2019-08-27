@@ -5,7 +5,7 @@
 </div>
 
 <div id="search-bar-container">
-  <search-bar></search-bar>
+  <search-bar on-input="vm.search"></search-bar>
 
   <div class="category-list">
     <div ng-repeat="category in vm.categories" ng-class="{'active': vm.category == category.id}"
