@@ -6,7 +6,7 @@ angular
     vm.foo = 'bar';
 
     vm.data = [];
-    $http.get('data').then(function(response) {
+    $http.get('games').then(function(response) {
       vm.data = response.data;
       window.data = response.data; // TODO: remove on production
       vm.games = vm.data.slice(0, 12);

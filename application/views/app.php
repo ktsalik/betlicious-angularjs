@@ -49,9 +49,9 @@
   <div id="game-list">
     <game
       ng-repeat="game in vm.games"
-      thumbnail="game.icon_2"
-      title="game.name"
-      provider="game.provider_title"></game>
+      thumbnail="game.thumbnail"
+      title="game.title"
+      provider="game.provider"></game>
     
     <div class="btn-more" ng-click="vm.loadMore()">
       More Games
