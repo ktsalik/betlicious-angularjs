@@ -11,6 +11,7 @@ angular
       link: function(scope, element, attrs) {
         var img = element[0].querySelector('img');
         img.style.visibility = 'hidden';
+        img.style.opacity = 0;
 
         // `<i class="fas fa-circle-notch fa-spin" style="color:#FFF"></i>`
         var loader = document.createElement('i');
@@ -26,11 +27,14 @@ angular
         img.onload = function() {
           loader.remove();
           img.style.visibility = 'visible';
+          img.style.transition = 'opacity 300ms';
+          img.style.opacity = 1;
         };
         img.onerror = function() {
           img.src = 'assets/img/coming-soon.png';
           loader.remove();
           img.style.visibility = 'visible';
+          img.style.opacity = 1;
         };
       },
     };
