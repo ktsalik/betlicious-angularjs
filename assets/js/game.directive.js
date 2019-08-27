@@ -13,7 +13,6 @@ angular
         img.style.visibility = 'hidden';
         img.style.opacity = 0;
 
-        // `<i class="fas fa-circle-notch fa-spin" style="color:#FFF"></i>`
         var loader = document.createElement('i');
         loader.classList.add('fas');
         loader.classList.add('fa-circle-notch');
@@ -32,6 +31,7 @@ angular
         };
         img.onerror = function() {
           img.src = 'assets/img/coming-soon.png';
+          img.width = 150;
           loader.remove();
           img.style.visibility = 'visible';
           img.style.opacity = 1;
