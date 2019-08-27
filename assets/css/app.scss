@@ -92,10 +92,34 @@ body {
 
 #search-bar-container {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   padding: 30px;
+
+  .category-list {
+    display: inline-flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 10px 0;
+
+    & > div {
+      padding: 7px;
+      color: #FFF;
+      background: transparent;
+      font-size: 13px;
+      border: 1px solid #fbd133;
+      margin: 0 3px;
+      cursor: pointer;
+
+      &.active {
+        background-color: #fbd133;
+        color: #222;
+      }
+    }
+  }
 }
 
 #game-list {

@@ -44,6 +44,12 @@
 
   <div id="search-bar-container">
     <search-bar></search-bar>
+
+    <div class="category-list">
+      <div ng-repeat="category in vm.categories" ng-class="{'active': vm.category == category.id}" ng-click="vm.chooseCategory(category.id)">
+        {{category.title}}
+      </div>
+    </div>
   </div>
 
   <div id="game-list">

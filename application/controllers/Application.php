@@ -20,9 +20,30 @@ class Application extends CI_Controller {
       $game['thumbnail'] = $entry->icon_2;
       $game['title'] = $entry->name;
       $game['provider'] = $entry->provider_title;
+      $game['categories'] = $entry->categories;
       array_push($games, $game);
     }
 
     print json_encode($games);
+  }
+
+  public function get_categories() {
+    $data = file_get_contents('data.json');
+    $categories = [];
+    foreach (json_decode($data) as $entry) {
+      foreach ($entry->cats as $category) {
+        $already_exists = false;
+        for ($i = 0; $i < count($categories); $i++) {
+          if ($categories[$i]->id == $category->id) {
+            $already_exists = true;
+            break;
+          }
+        }
+        if (!$already_exists) {
+          array_push($categories, $category);
+        }
+      }
+    }
+    print json_encode($categories);
   }
 }
