@@ -4,6 +4,7 @@
 <head>
   <meta charset="utf-8">
 
+  <link rel="shortcut icon" href="#">
   <title>Betlicious - AngularJS</title>
   <meta name="description" content="For the reason of Web Development skills demonstration">
   <meta name="author" content="K.Tsalikidis">
@@ -13,7 +14,7 @@
 
 </head>
 
-<body ng-app="BetliciousApp" ng-controller="AppController as vm">
+<body ng-app="BetliciousApp" ng-controller="AppController as vm" ng-cloak>
 
   <div id="header">
     <div class="logo">
@@ -36,38 +37,14 @@
     <div link>VIP</div>
   </div>
 
-  <div id="banner">
-    <a href="http://ktsalikidis.000webhostapp.com/slots/client/">
-      <img src="assets/img/banner.png">
-    </a>
-  </div>
-
-  <div id="search-bar-container">
-    <search-bar></search-bar>
-
-    <div class="category-list">
-      <div ng-repeat="category in vm.categories" ng-class="{'active': vm.category == category.id}" ng-click="vm.chooseCategory(category.id)">
-        {{category.title}}
-      </div>
-    </div>
-  </div>
-
-  <div id="game-list">
-    <game
-      ng-repeat="game in vm.games"
-      thumbnail="game.thumbnail"
-      title="game.title"
-      provider="game.provider"></game>
-    
-    <div class="btn-more" ng-show="vm.games.length < vm.data.length" ng-click="vm.loadMore()">
-      More Games
-    </div>
-  </div>
+  <div ng-view></div>
 
   <script src="https://kit.fontawesome.com/ce46ce4a0e.js"></script>
   <script src="assets/lib/angular.min.js"></script>
+  <script src="assets/lib/angular-route.min.js"></script>
   <script src="assets/js/app.js"></script>
   <script src="assets/js/app.controller.js"></script>
+  <script src="assets/js/game.controller.js"></script>
   <script src="assets/js/input-field.directive.js"></script>
   <script src="assets/js/search-bar.directive.js"></script>
   <script src="assets/js/game.directive.js"></script>

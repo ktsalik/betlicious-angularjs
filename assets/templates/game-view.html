@@ -1,0 +1,23 @@
+<style>
+  .game {
+
+  }
+
+  .game .title {
+    font-size: 27px;
+    color: #FFF;
+  }
+
+  .game .title span {
+    font-size: 17px;
+    color: #fbd133;
+  }
+
+  .game img {
+    width: 100vw;
+  }
+</style>
+<div class="game">
+  <div class="title"><span>You play</span>&nbsp;{{vm.view.name}}</div>
+  <img ng-src="{{vm.view.background}}">
+</div>

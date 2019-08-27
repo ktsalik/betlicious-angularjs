@@ -1,6 +1,6 @@
 angular
   .module('BetliciousApp')
-  .controller('AppController', ['$scope', '$http', function($scope, $http) {
+  .controller('AppController', ['$scope', '$http', '$location', function($scope, $http, $location) {
     var vm = this;
 
     vm.view = {
@@ -29,6 +29,10 @@ angular
         }
       })
     });
+
+    vm.play = function(game) {
+      $location.path('play/' + game.title);
+    };
 
     vm.loadMore = function() {
       if (vm.games.length < vm.data.length) {

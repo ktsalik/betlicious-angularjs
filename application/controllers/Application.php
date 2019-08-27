@@ -12,10 +12,9 @@ class Application extends CI_Controller {
   }
   
   public function get_games() {
-    $data = file_get_contents('data.json');
-
+    $data = json_decode(file_get_contents('data.json'));
     $games = [];
-    foreach (json_decode($data) as $entry) {
+    foreach ($data as $entry) {
       $game = [];
       $game['thumbnail'] = $entry->icon_2;
       $game['title'] = $entry->name;
@@ -23,14 +22,27 @@ class Application extends CI_Controller {
       $game['categories'] = $entry->categories;
       array_push($games, $game);
     }
-
     print json_encode($games);
   }
 
+  public function get_game($name) {
+    $name = urldecode($name);
+    $data = json_decode(file_get_contents('data.json'));
+    for ($i = 0; $i < count($data); $i++) {
+      if ($data[$i]->name == $name) {
+        $game = [];
+        $game['name'] = $data[$i]->name;
+        $game['background'] = $data[$i]->background;
+        print json_encode($game);
+        return;
+      }
+    }
+  }
+
   public function get_categories() {
-    $data = file_get_contents('data.json');
+    $data = json_decode(file_get_contents('data.json'));
     $categories = [];
-    foreach (json_decode($data) as $entry) {
+    foreach ($data as $entry) {
       foreach ($entry->cats as $category) {
         $already_exists = false;
         for ($i = 0; $i < count($categories); $i++) {
