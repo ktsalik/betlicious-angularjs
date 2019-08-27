@@ -37,6 +37,14 @@ angular
         inputEl.addEventListener('blur', function() {
           ph.style.display = 'initial';
         });
+
+        inputEl.addEventListener('input', function () {
+          if (this.value.length) {
+            ph.style.visibility = 'hidden';
+          } else {
+            ph.style.visibility = 'visible';
+          }
+        });
       },
     };
   });
