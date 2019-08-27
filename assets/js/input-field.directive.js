@@ -22,8 +22,14 @@ angular
         ph.style.position = 'absolute';
         ph.style.left = 0;
         ph.style.top = 0;
+        ph.style.cursor = 'text';
         
         element[0].addEventListener('click', function() {
+          ph.style.display = 'none';
+          inputEl.focus();
+        });
+
+        inputEl.addEventListener('focus', function () {
           ph.style.display = 'none';
           inputEl.focus();
         });

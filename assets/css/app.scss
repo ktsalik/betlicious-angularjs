@@ -7,6 +7,7 @@ body {
   margin: 0;
   background: #141e30;
   font-family: web;
+  user-select: none;
 }
 
 #header {
@@ -55,7 +56,6 @@ body {
       padding: 5px 20px;
       border-radius: 18px;
       font-weight: bold;
-      cursor: pointer;
     }
 
     .btn-login {
@@ -76,12 +76,16 @@ body {
   [link] {
     display: inline-block;
     padding: 5px;
-    cursor: pointer;
     margin: 0 30px;
   }
 }
 
 #banner {
+  display: inline-flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
   width: 100vw;
   overflow: hidden;
+  cursor: pointer;
 }
