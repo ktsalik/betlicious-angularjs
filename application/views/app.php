@@ -37,7 +37,9 @@
   </div>
 
   <div id="banner">
-    <img src="assets/img/banner.png">
+    <a href="http://ktsalikidis.000webhostapp.com/slots/client/">
+      <img src="assets/img/banner.png">
+    </a>
   </div>
 
   <div id="search-bar-container">
