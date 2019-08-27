@@ -5,7 +5,7 @@ angular
       template: `
         <div class="search-bar">
           <input type="text">
-          <div placeholder>Search</div>
+          <div placeholder>Search Games</div>
           <div button>
             <i class="fa fa-search"></i>
           </div>

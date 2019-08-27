@@ -21,7 +21,7 @@ angular
         var placeholderEl = element[0].querySelector('[placeholder]');
         var ph = placeholderEl;
         ph.style.position = 'absolute';
-        ph.style.left = 0;
+        ph.style.left = '3px';
         ph.style.top = 0;
         ph.style.cursor = 'text';
         

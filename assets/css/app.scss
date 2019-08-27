@@ -89,3 +89,11 @@ body {
   overflow: hidden;
   cursor: pointer;
 }
+
+#search-bar-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+}
