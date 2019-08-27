@@ -95,5 +95,14 @@ body {
   align-items: flex-start;
   flex-wrap: wrap;
 }
+#game-list .btn-more {
+  background-color: #ed4635;
+  color: #FFF;
+  border-radius: 28px;
+  padding: 10px 20px;
+  font-size: 17px;
+  margin: 33px;
+  cursor: pointer;
+}
 
 /*# sourceMappingURL=app.css.map */

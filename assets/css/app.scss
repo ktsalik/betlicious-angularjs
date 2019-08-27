@@ -104,4 +104,14 @@ body {
   justify-content: center;
   align-items: flex-start;
   flex-wrap: wrap;
+
+  .btn-more {
+    background-color: #ed4635;
+    color: #FFF;
+    border-radius: 28px;
+    padding: 10px 20px;
+    font-size: 17px;
+    margin: 33px;
+    cursor: pointer;
+  }
 }

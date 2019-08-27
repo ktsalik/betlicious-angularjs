@@ -48,10 +48,14 @@
 
   <div id="game-list">
     <game
-      ng-repeat="game in vm.data"
+      ng-repeat="game in vm.games"
       thumbnail="game.icon_2"
       title="game.name"
       provider="game.provider_title"></game>
+    
+    <div class="btn-more" ng-click="vm.loadMore()">
+      More Games
+    </div>
   </div>
 
   <script src="https://kit.fontawesome.com/ce46ce4a0e.js"></script>
