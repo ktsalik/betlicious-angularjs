@@ -62,6 +62,7 @@ angular
           vm.data = data.filter(function (game) {
             return game.title.toLowerCase().indexOf(value.toLowerCase()) > -1;
           });
+          vm.category = null;
         }
         vm.games = vm.data.slice(0, 12);
       });
