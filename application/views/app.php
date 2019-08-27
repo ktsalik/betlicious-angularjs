@@ -9,6 +9,7 @@
   <meta name="author" content="K.Tsalikidis">
 
   <link href="assets/css/app.css" rel="stylesheet">
+  <link href="assets/css/search-bar.css" rel="stylesheet">
 
 </head>
 
@@ -39,12 +40,13 @@
     <img src="assets/img/banner.png">
   </div>
 
-  
+  <search-bar></search-bar>
 
   <script src="https://kit.fontawesome.com/ce46ce4a0e.js"></script>
   <script src="assets/lib/angular.min.js"></script>
   <script src="assets/js/app.js"></script>
   <script src="assets/js/app.controller.js"></script>
   <script src="assets/js/input-field.directive.js"></script>
+  <script src="assets/js/search-bar.directive.js"></script>
 </body>
 </html>
