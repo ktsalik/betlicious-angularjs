@@ -5,6 +5,9 @@ angular
 
     vm.view = {
       category: null,
+      search: {
+        value: '',
+      },
     };
 
     vm.data = [];
@@ -51,7 +54,7 @@ angular
         });
       }
       vm.games = vm.data.slice(0, 12);
-      document.querySelector('.search-bar input').value = ''; // FIXME: temporary hack to prevent injecting a model to search-bar component for now...
+      vm.view.search.value = '';
     };
 
     vm.search = function(value) {

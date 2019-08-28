@@ -4,10 +4,11 @@ angular
     return {
       scope: {
         onInput: '=',
+        ngModel: '=',
       },
       template: `
         <div class="search-bar">
-          <input type="text">
+          <input type="text" ng-model="ngModel">
           <div placeholder>Search Game</div>
           <div button>
             <i class="fa fa-search"></i>
@@ -38,8 +39,10 @@ angular
           onInputTimeout = setTimeout(function() {
             scope.onInput(value);
           }, 350);
-          
-          if (this.value.length) {
+        });
+
+        scope.$watch('ngModel', function(val) {
+          if (val) {
             placeholderEl.style.visibility = 'hidden';
           } else {
             placeholderEl.style.visibility = 'visible';
