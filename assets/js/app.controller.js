@@ -5,14 +5,20 @@ angular
 
     vm.view = {
       category: null,
+      theme: null,
+      themeShowCount: 10,
       search: {
         value: '',
+      },
+      filter: {
+        type: 'categories',
       },
     };
 
     vm.data = [];
     vm.games = [];
     vm.categories = [];
+    vm.themes = [];
     
     var data = [];
     $http.get('games').then(function(response) {
@@ -25,6 +31,17 @@ angular
     $http.get('categories').then(function(response) {
       vm.categories = response.data;
       vm.categories.sort(function(a, b) {
+        if (a.title > b.title) {
+          return 1;
+        } else {
+          return -1;
+        }
+      })
+    });
+    
+    $http.get('themes').then(function (response) {
+      vm.themes = response.data;
+      vm.themes.sort(function (a, b) {
         if (a.title > b.title) {
           return 1;
         } else {
@@ -55,6 +72,7 @@ angular
       }
       vm.games = vm.data.slice(0, 12);
       vm.view.search.value = '';
+      vm.theme = null;
     };
 
     vm.search = function(value) {
@@ -66,8 +84,24 @@ angular
             return game.title.toLowerCase().indexOf(value.toLowerCase()) > -1;
           });
           vm.category = null;
+          vm.theme = null;
         }
         vm.games = vm.data.slice(0, 12);
       });
+    };
+
+    vm.chooseTheme = function (themeId) {
+      if (vm.theme == themeId) {
+        vm.theme = null;
+        vm.data = data;
+      } else {
+        vm.theme = themeId;
+        vm.data = data.filter(function (game) {
+          return game.themes.indexOf(themeId) > -1;
+        });
+      }
+      vm.games = vm.data.slice(0, 12);
+      vm.view.search.value = '';
+      vm.category = null;
     };
   }]);

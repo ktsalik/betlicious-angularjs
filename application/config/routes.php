@@ -53,5 +53,6 @@ $route['default_controller'] = 'application';
 $route['games'] = 'application/get_games';
 $route['games/(:any)'] = 'application/get_game/$1';
 $route['categories'] = 'application/get_categories';
+$route['themes'] = 'application/get_themes';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;

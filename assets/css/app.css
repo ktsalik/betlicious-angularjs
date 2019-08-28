@@ -104,7 +104,7 @@ body {
   align-items: center;
   padding: 30px;
 }
-#search-bar-container .category-list {
+#search-bar-container .category-list, #search-bar-container .theme-list {
   display: inline-flex;
   flex-direction: row;
   justify-content: flex-start;
@@ -112,7 +112,7 @@ body {
   flex-wrap: wrap;
   margin: 10px 0;
 }
-#search-bar-container .category-list > div {
+#search-bar-container .category-list > div, #search-bar-container .theme-list > div {
   padding: 7px;
   color: #FFF;
   background: transparent;
@@ -121,9 +121,38 @@ body {
   margin: 2px 3px;
   cursor: pointer;
 }
+#search-bar-container .category-list > div.active, #search-bar-container .theme-list > div.active {
+  background-color: #fbd133;
+  color: #222;
+}
+#search-bar-container .category-list > div {
+  border: 1px solid #fbd133;
+}
 #search-bar-container .category-list > div.active {
   background-color: #fbd133;
   color: #222;
+}
+#search-bar-container .theme-list > div {
+  border: 1px solid #ed4635;
+}
+#search-bar-container .theme-list > div.active {
+  background-color: #ed4635;
+  color: #FFF;
+}
+#search-bar-container .btn-show-categories, #search-bar-container .btn-show-themes {
+  text-align: center;
+  padding: 0 7px;
+  font-size: 13px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+#search-bar-container .btn-show-categories {
+  border: 1px solid #fbd133;
+  color: #FFF;
+}
+#search-bar-container .btn-show-themes {
+  border: 1px solid #ed4635;
+  color: #FFF;
 }
 
 #game-list {

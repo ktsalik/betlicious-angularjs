@@ -7,12 +7,27 @@
 <div id="search-bar-container">
   <search-bar ng-model="vm.view.search.value" on-input="vm.search"></search-bar>
 
-  <div class="category-list">
+  <div class="category-list" ng-show="vm.view.filter.type == 'categories'">
     <div ng-repeat="category in vm.categories" ng-class="{'active': vm.category == category.id}"
       ng-click="vm.chooseCategory(category.id)">
       {{category.title}}
     </div>
   </div>
+
+  <div class="theme-list" ng-show="vm.view.filter.type == 'themes'">
+    <div ng-repeat="theme in vm.themes track by $index" ng-class="{'active': vm.theme == theme.id}"
+      ng-show="$index <= vm.view.themeShowCount"
+      ng-click="vm.chooseTheme(theme.id)">
+      {{theme.title.slice(0, 1).toUpperCase()}}{{theme.title.slice(1).toLowerCase()}}
+    </div>
+    <div class="btn-show-more-themes" 
+      ng-show="vm.view.themeShowCount < vm.themes.length" 
+      ng-click="vm.view.themeShowCount = vm.view.themeShowCount + 10">more...</div>
+  </div>
+
+  <div class="btn-show-categories" ng-show="vm.view.filter.type == 'themes'" ng-click="vm.view.filter.type = 'categories'">Categories</div>
+
+  <div class="btn-show-themes" ng-show="vm.view.filter.type == 'categories'" ng-click="vm.view.filter.type = 'themes'">Themes</div>
 </div>
 
 <div id="game-list">

@@ -20,6 +20,7 @@ class Application extends CI_Controller {
       $game['title'] = $entry->name;
       $game['provider'] = $entry->provider_title;
       $game['categories'] = $entry->categories;
+      $game['themes'] = $entry->themes;
       array_push($games, $game);
     }
     print json_encode($games);
@@ -59,5 +60,25 @@ class Application extends CI_Controller {
       }
     }
     print json_encode($categories);
+  }
+
+  public function get_themes() {
+    $data = json_decode(file_get_contents('data.json'));
+    $themes = [];
+    foreach ($data as $entry) {
+      foreach ($entry->thms as $theme) {
+        $already_exists = false;
+        for ($i = 0; $i < count($themes); $i++) {
+          if ($themes[$i]->id == $theme->id) {
+            $already_exists = true;
+            break;
+          }
+        }
+        if (!$already_exists) {
+          array_push($themes, $theme);
+        }
+      }
+    }
+    print json_encode($themes);
   }
 }

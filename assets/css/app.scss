@@ -113,7 +113,7 @@ body {
   align-items: center;
   padding: 30px;
 
-  .category-list {
+  .category-list, .theme-list {
     display: inline-flex;
     flex-direction: row;
     justify-content: flex-start;
@@ -135,6 +135,45 @@ body {
         color: #222;
       }
     }
+  }
+
+  .category-list {
+    & > div {
+      border: 1px solid #fbd133;
+      &.active {
+        background-color: #fbd133;
+        color: #222;
+      }
+    }
+  }
+
+  .theme-list {
+    & > div {
+      border: 1px solid #ed4635;
+
+      &.active {
+        background-color: #ed4635;
+        color: #FFF;
+      }
+    }
+  }
+
+  .btn-show-categories, .btn-show-themes {
+    text-align: center;
+    padding: 0 7px;
+    font-size: 13px;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+
+  .btn-show-categories {
+    border: 1px solid #fbd133;
+    color: #FFF;
+  }
+
+  .btn-show-themes {
+    border: 1px solid #ed4635;
+    color: #FFF;
   }
 }
 
