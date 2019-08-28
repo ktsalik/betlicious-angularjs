@@ -7,6 +7,10 @@
   width: 333px;
   height: 33px;
 
+  @media screen and (max-width: 357px) {
+    width: 100%;
+  }
+
   input {
     position: absolute;
     top: 0;

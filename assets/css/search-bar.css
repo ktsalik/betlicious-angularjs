@@ -7,6 +7,11 @@
   width: 333px;
   height: 33px;
 }
+@media screen and (max-width: 357px) {
+  .search-bar {
+    width: 100%;
+  }
+}
 .search-bar input {
   position: absolute;
   top: 0;

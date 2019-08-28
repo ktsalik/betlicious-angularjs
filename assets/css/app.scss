@@ -17,6 +17,11 @@ body {
   align-items: center;
   padding: 15px 7px;
 
+  @media screen and (max-width: 650px) {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
   .logo {
     display: inline-flex;
     flex-direction: row;
@@ -35,8 +40,12 @@ body {
     justify-content: flex-start;
     align-items: center;
 
+    @media screen and (max-width: 500px) {
+      flex-wrap: wrap;
+    }
+
     & > * {
-      margin: 0 5px;
+      margin: 3px 5px;
     }
 
     input {
@@ -56,6 +65,7 @@ body {
       padding: 5px 20px;
       border-radius: 18px;
       font-weight: bold;
+      white-space: nowrap;
     }
 
     .btn-login {
@@ -88,6 +98,12 @@ body {
   width: 100vw;
   overflow: hidden;
   cursor: pointer;
+
+  @media screen and (max-width: 1200px) {
+    img {
+      width: 100%;
+    }
+  }
 }
 
 #search-bar-container {
@@ -111,7 +127,7 @@ body {
       background: transparent;
       font-size: 13px;
       border: 1px solid #fbd133;
-      margin: 0 3px;
+      margin: 2px 3px;
       cursor: pointer;
 
       &.active {

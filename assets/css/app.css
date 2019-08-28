@@ -16,6 +16,12 @@ body {
   align-items: center;
   padding: 15px 7px;
 }
+@media screen and (max-width: 650px) {
+  #header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
 #header .logo {
   display: inline-flex;
   flex-direction: row;
@@ -32,8 +38,13 @@ body {
   justify-content: flex-start;
   align-items: center;
 }
+@media screen and (max-width: 500px) {
+  #header .options {
+    flex-wrap: wrap;
+  }
+}
 #header .options > * {
-  margin: 0 5px;
+  margin: 3px 5px;
 }
 #header .options input {
   font-size: 15px;
@@ -51,6 +62,7 @@ body {
   padding: 5px 20px;
   border-radius: 18px;
   font-weight: bold;
+  white-space: nowrap;
 }
 #header .options .btn-login {
   background-color: #ed4635;
@@ -79,6 +91,11 @@ body {
   overflow: hidden;
   cursor: pointer;
 }
+@media screen and (max-width: 1200px) {
+  #banner img {
+    width: 100%;
+  }
+}
 
 #search-bar-container {
   display: flex;
@@ -101,7 +118,7 @@ body {
   background: transparent;
   font-size: 13px;
   border: 1px solid #fbd133;
-  margin: 0 3px;
+  margin: 2px 3px;
   cursor: pointer;
 }
 #search-bar-container .category-list > div.active {

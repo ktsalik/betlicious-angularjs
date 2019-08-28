@@ -6,6 +6,7 @@
 
   <link rel="shortcut icon" href="#">
   <title>Betlicious - AngularJS</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="For the reason of Web Development skills demonstration">
   <meta name="author" content="K.Tsalikidis">
 
