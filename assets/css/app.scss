@@ -184,6 +184,10 @@ body {
   align-items: flex-start;
   flex-wrap: wrap;
 
+  &.bottom-offset {
+    padding-bottom: 150px;
+  }
+
   .btn-more {
     background-color: #ed4635;
     color: #FFF;

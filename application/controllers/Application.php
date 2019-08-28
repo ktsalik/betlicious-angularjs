@@ -13,6 +13,23 @@ class Application extends CI_Controller {
   
   public function get_games() {
     $data = json_decode(file_get_contents('data.json'));
+
+    $features = [];
+    foreach ($data as $entry) {
+      foreach ($entry->feats as $feature) {
+        $already_exists = false;
+        for ($i = 0; $i < count($features); $i++) {
+          if ($features[$i]->id == $feature->id) {
+            $already_exists = true;
+            break;
+          }
+        }
+        if (!$already_exists) {
+          array_push($features, $feature);
+        }
+      }
+    }
+
     $games = [];
     foreach ($data as $entry) {
       $game = [];
@@ -21,6 +38,14 @@ class Application extends CI_Controller {
       $game['provider'] = $entry->provider_title;
       $game['categories'] = $entry->categories;
       $game['themes'] = $entry->themes;
+      $game['features'] = [];
+      foreach ($entry->features as $feature_id) {
+        for ($i = 0; $i < count($features); $i++) {
+          if ($features[$i]->id == $feature_id) {
+            array_push($game['features'], $features[$i]->title);
+          }
+        }
+      }
       array_push($games, $game);
     }
     print json_encode($games);

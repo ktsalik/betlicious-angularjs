@@ -41,6 +41,7 @@
   <div ng-view></div>
 
   <script src="https://kit.fontawesome.com/ce46ce4a0e.js"></script>
+  <script src="assets/lib/anime.min.js"></script>
   <script src="assets/lib/angular.min.js"></script>
   <script src="assets/lib/angular-route.min.js"></script>
   <script src="assets/js/app.js"></script>

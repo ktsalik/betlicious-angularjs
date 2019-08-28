@@ -30,11 +30,12 @@
   <div class="btn-show-themes" ng-show="vm.view.filter.type == 'categories'" ng-click="vm.view.filter.type = 'themes'">Themes</div>
 </div>
 
-<div id="game-list">
+<div id="game-list" ng-class="{'bottom-offset': vm.games.length >= vm.data.length}">
   <game ng-repeat="game in vm.games"
     thumbnail="game.thumbnail"
-    title="game.title"
+    ttitle="game.title"
     provider="game.provider"
+    features="game.features"
     ng-click="vm.play(game)"></game>
 
   <div class="btn-more" ng-show="vm.games.length < vm.data.length" ng-click="vm.loadMore()">
