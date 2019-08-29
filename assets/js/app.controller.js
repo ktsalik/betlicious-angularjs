@@ -20,12 +20,12 @@ angular
     vm.categories = [];
     vm.themes = [];
     
-    var data = [];
+    vm._data = [];
     $http.get('games').then(function(response) {
       vm.data = response.data;
       window.data = response.data; // TODO: remove on production
       vm.games = vm.data.slice(0, 12);
-      data = response.data;
+      vm._data = response.data;
     });
 
     $http.get('categories').then(function(response) {
@@ -63,10 +63,10 @@ angular
     vm.chooseCategory = function(categoryId) {
       if (vm.category == categoryId) {
         vm.category = null;
-        vm.data = data;
+        vm.data = vm._data;
       } else {
         vm.category = categoryId;
-        vm.data = data.filter(function(game) {
+        vm.data = vm._data.filter(function(game) {
           return game.categories.indexOf(categoryId) > -1;
         });
       }
@@ -78,9 +78,9 @@ angular
     vm.search = function(value) {
       $scope.$apply(function() {
         if (!value.trim().length) {
-          vm.data = data;
+          vm.data = vm._data;
         } else {
-          vm.data = data.filter(function(game) {
+          vm.data = vm._data.filter(function(game) {
             return game.title.toLowerCase().indexOf(value.toLowerCase()) > -1;
           });
           vm.category = null;
@@ -93,10 +93,10 @@ angular
     vm.chooseTheme = function (themeId) {
       if (vm.theme == themeId) {
         vm.theme = null;
-        vm.data = data;
+        vm.data = vm._data;
       } else {
         vm.theme = themeId;
-        vm.data = data.filter(function (game) {
+        vm.data = vm._data.filter(function (game) {
           return game.themes.indexOf(themeId) > -1;
         });
       }

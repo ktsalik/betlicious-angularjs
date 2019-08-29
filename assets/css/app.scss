@@ -209,3 +209,48 @@ body {
 .x-ng-cloak {
   display: none !important;
 }
+
+.game[view] {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.game[view] .title {
+  font-size: 27px;
+  color: #FFF;
+}
+
+.game[view] .title span {
+  font-size: 17px;
+  color: #fbd133;
+}
+
+.game[view] > img {
+  width: 100vw;
+}
+
+.game[view] .more-games {
+  border-top: 1px solid #fbd133;
+  width: 100%;
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.game[view] .more-games > span {
+  color: #FFF;
+  margin: 15px 0;
+  margin-top: 50px;
+  font-size: 14px;
+}
+
+.game[view] .more-games span.yellow {
+  color: #fbd133;
+}
+
+.game[view] .more-games span.red {
+  color: #ed4635;
+}
