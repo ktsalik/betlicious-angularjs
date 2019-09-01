@@ -10,10 +10,11 @@
 
   <div class="more-games" ng-show="vm.view.backgroundLoaded && vm.games.length> 1">
     <span>
-      {{vm.view.moreGamesText}}
+      More&nbsp;
       <span ng-class="{'yellow': vm.moreGamesSelectorType == 'category', 'red': vm.moreGamesSelectorType == 'theme'}">
-        {{vm.view.moreGamesSelector}}
+        {{vm.view.moreGamesSelector.slice(0, 1).toUpperCase()}}{{vm.view.moreGamesSelector.slice(1).toLowerCase()}}
       </span>
+      <span ng-if="vm.view.moreGamesSelector.toLowerCase().indexOf('games') == -1">&nbsp;games</span>
     </span>
     <div id="game-list">
       <game ng-repeat="game in vm.games" 

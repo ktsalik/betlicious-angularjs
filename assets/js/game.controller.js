@@ -33,7 +33,6 @@ angular
     var categorySelected = $scope.$parent.vm.category;
     var themeSelected = $scope.$parent.vm.theme;
     if (categorySelected) {
-      vm.view.moreGamesText = 'More games in category ';
       vm.games = $scope.$parent.vm._data
         .filter(g => g.categories.indexOf(categorySelected) > -1)
         .sort(() => Math.random() - 0.5)
@@ -41,7 +40,6 @@ angular
       vm.view.moreGamesSelector = $scope.$parent.vm.categories.find(c => c.id == categorySelected).title; // lobby selected category
       vm.moreGamesSelectorType = 'category';
     } else if (themeSelected) {
-      vm.view.moreGamesText = 'More games with ';
       vm.games = $scope.$parent.vm._data
         .filter(g => g.themes.indexOf(themeSelected) > -1)
         .sort(() => Math.random() - 0.5)
@@ -50,7 +48,6 @@ angular
       vm.moreGamesSelectorType = 'theme';
     } else if ($scope.$parent.vm._data.length) {
       var provider = $scope.$parent.vm._data.find(g => g.title == $routeParams.gameId).provider; // current (playing) game provider
-      vm.view.moreGamesText = 'More games from ';
       vm.view.moreGamesSelector = provider;
       vm.games = $scope.$parent.vm._data
         .filter(g => g.provider == provider)
