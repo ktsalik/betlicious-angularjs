@@ -10,8 +10,8 @@
   <meta name="description" content="For the reason of Web Development skills demonstration">
   <meta name="author" content="K.Tsalikidis">
 
-  <link href="assets/css/app.css" rel="stylesheet">
-  <link href="assets/css/search-bar.css" rel="stylesheet">
+  <link href="assets/css/app.css?v=<?= uniqid() ?>" rel="stylesheet">
+  <link href="assets/css/search-bar.css?v=<?= uniqid() ?>" rel="stylesheet">
 
 </head>
 

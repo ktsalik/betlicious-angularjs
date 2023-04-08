@@ -1,5 +1,5 @@
 <div id="banner">
-  <a href="http://ktsalikidis.000webhostapp.com/slots/client/">
+  <a href="https://sloticon.onrender.com/">
     <img src="assets/img/banner.png">
   </a>
 </div>
@@ -31,14 +31,16 @@
 </div>
 
 <div id="game-list" ng-class="{'bottom-offset': vm.games.length >= vm.data.length}">
-  <game ng-repeat="game in vm.games"
+  <game
+    ng-repeat="game in vm.games"
     thumbnail="game.thumbnail"
     ttitle="game.title"
     provider="game.provider"
     features="game.features"
-    ng-click="vm.play(game)"></game>
+    ng-click="vm.play(game)"
+  ></game>
+</div>
 
-  <div class="btn-more" ng-show="vm.games.length < vm.data.length" ng-click="vm.loadMore()">
-    More Games
-  </div>
+<div class="btn-more" ng-show="vm.games.length < vm.data.length" ng-click="vm.loadMore()">
+  More Games
 </div>

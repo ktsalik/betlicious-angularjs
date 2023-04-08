@@ -32,7 +32,6 @@ angular
 
         inputEl.addEventListener('focus', function() {
           ph.style.display = 'none';
-          inputEl.focus();
         });
 
         inputEl.addEventListener('blur', function() {
